@@ -1,0 +1,176 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ice: var(--ice);
+  --color-ice-foreground: var(--ice-foreground);
+  --color-summit: var(--summit);
+  --color-nakama-magenta: var(--nakama-magenta);
+  --color-nakama-night: var(--nakama-night);
+  --color-nakama-coral: var(--nakama-coral);
+  --color-nakama-pink: var(--nakama-pink);
+  --color-nakama-warm: var(--nakama-warm);
+}
+
+/* ============================================================
+   Nakama — dark-first premium palette
+   Magenta      #9b0646  brand primary
+   Black        #0b0f12  app background
+   Night purple #552f60
+   Bright pink  #e72982  secondary accent / highlight
+   Lilac        #a69dbb  secondary text
+   Coral        #ea4d61  CTA
+   Warm white   #e3deda  primary text
+   Dusty pink   #d9c2ca
+   Light salmon #f3a8a6
+   ============================================================ */
+
+:root {
+  --radius: 1rem;
+
+  /* Dark base */
+  --background: oklch(0.16 0.014 250);              /* #0b0f12 */
+  --foreground: oklch(0.94 0.008 40);               /* #e3deda */
+
+  /* Elevated dark surfaces, subtle warm purple cast */
+  --card: oklch(0.21 0.022 290);
+  --card-foreground: oklch(0.94 0.008 40);
+  --popover: oklch(0.20 0.020 290);
+  --popover-foreground: oklch(0.94 0.008 40);
+
+  /* Brand primary = deep magenta */
+  --primary: oklch(0.40 0.17 5);                    /* #9b0646 */
+  --primary-foreground: oklch(0.97 0.01 40);
+
+  /* Soft dark surface for chips, secondary buttons */
+  --secondary: oklch(0.26 0.030 295);
+  --secondary-foreground: oklch(0.94 0.008 40);
+
+  --muted: oklch(0.23 0.022 290);
+  --muted-foreground: oklch(0.72 0.025 305);        /* #a69dbb lilac */
+
+  /* Accent = coral, hover / interactive highlight */
+  --accent: oklch(0.68 0.18 20);                    /* #ea4d61 */
+  --accent-foreground: oklch(0.99 0.005 30);
+
+  /* Brand aliases */
+  --nakama-magenta: oklch(0.40 0.17 5);
+  --nakama-night: oklch(0.34 0.07 320);              /* #552f60 */
+  --nakama-coral: oklch(0.68 0.18 20);
+  --nakama-pink: oklch(0.62 0.24 350);               /* #e72982 */
+  --nakama-warm: oklch(0.94 0.008 40);
+
+  /* Legacy compatibility tokens — kept dark */
+  --ice: oklch(0.26 0.030 295);
+  --ice-foreground: oklch(0.94 0.008 40);
+  --summit: oklch(0.62 0.24 350);
+
+  --destructive: oklch(0.58 0.20 25);
+  --destructive-foreground: oklch(0.98 0.01 40);
+
+  --border: oklch(0.30 0.030 290 / 0.6);
+  --input: oklch(0.30 0.030 290);
+  --ring: oklch(0.62 0.24 350);
+
+  --sidebar: oklch(0.18 0.018 270);
+  --sidebar-foreground: oklch(0.94 0.008 40);
+  --sidebar-primary: oklch(0.40 0.17 5);
+  --sidebar-primary-foreground: oklch(0.97 0.01 40);
+  --sidebar-accent: oklch(0.26 0.030 295);
+  --sidebar-accent-foreground: oklch(0.94 0.008 40);
+  --sidebar-border: oklch(0.30 0.030 290 / 0.6);
+  --sidebar-ring: oklch(0.62 0.24 350);
+}
+
+/* .dark is an alias of root now — keep for libraries reading the class. */
+.dark {
+  --background: oklch(0.16 0.014 250);
+  --foreground: oklch(0.94 0.008 40);
+  --card: oklch(0.21 0.022 290);
+  --card-foreground: oklch(0.94 0.008 40);
+  --popover: oklch(0.20 0.020 290);
+  --popover-foreground: oklch(0.94 0.008 40);
+  --primary: oklch(0.40 0.17 5);
+  --primary-foreground: oklch(0.97 0.01 40);
+  --secondary: oklch(0.26 0.030 295);
+  --secondary-foreground: oklch(0.94 0.008 40);
+  --muted: oklch(0.23 0.022 290);
+  --muted-foreground: oklch(0.72 0.025 305);
+  --accent: oklch(0.68 0.18 20);
+  --accent-foreground: oklch(0.99 0.005 30);
+  --border: oklch(0.30 0.030 290 / 0.6);
+  --input: oklch(0.30 0.030 290);
+  --ring: oklch(0.62 0.24 350);
+  --ice: oklch(0.26 0.030 295);
+  --ice-foreground: oklch(0.94 0.008 40);
+  --summit: oklch(0.62 0.24 350);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { font-family: var(--font-sans); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    background-image:
+      radial-gradient(at 8% -10%, oklch(0.40 0.17 5 / 0.30) 0px, transparent 55%),
+      radial-gradient(at 100% 0%, oklch(0.34 0.07 320 / 0.30) 0px, transparent 55%),
+      radial-gradient(at 50% 110%, oklch(0.62 0.24 350 / 0.12) 0px, transparent 60%);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+  h1 { letter-spacing: -0.035em; }
+  ::selection {
+    background-color: oklch(0.62 0.24 350 / 0.4);
+    color: var(--color-foreground);
+  }
+}
+
+@utility glow-magenta {
+  box-shadow: 0 0 0 1px oklch(0.40 0.17 5 / 0.6),
+              0 10px 40px -10px oklch(0.40 0.17 5 / 0.5);
+}
+@utility glow-pink {
+  box-shadow: 0 0 0 1px oklch(0.62 0.24 350 / 0.4),
+              0 12px 50px -12px oklch(0.62 0.24 350 / 0.5);
+}
+@utility surface-elevated {
+  background-image: linear-gradient(180deg,
+    oklch(0.24 0.028 295) 0%,
+    oklch(0.19 0.020 290) 100%);
+}
