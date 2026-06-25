@@ -75,10 +75,10 @@ export function EventCard({ event, spotsLeft, myRegStatus }: { event: Event; spo
           <Calendar className="w-3.5 h-3.5 text-accent" />
           {new Date(event.date).toLocaleDateString(lang === "it" ? "it-IT" : "en-US", { weekday: "short", day: "numeric", month: "short" })}
         </div>
-        <div className="flex items-center gap-2 text-muted-foreground">
+        <div className="flex items-center gap-2.5 text-muted-foreground">
           <Mountain className="w-3.5 h-3.5" />Meet: {event.meeting_point} · {event.departure_time ?? "—"}
         </div>
-        <div className="flex items-center gap-2 text-muted-foreground">
+        <div className="flex items-center gap-2.5 text-muted-foreground">
           <Users className="w-3.5 h-3.5" />Max {event.max_participants}{spotsLeft != null && ` · ${spotsLeft} spots left`}
         </div>
       </div>
